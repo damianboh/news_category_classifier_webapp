@@ -1,14 +1,12 @@
 import flask
 import pickle
-#import urllib
-
 
 # Use pickle to load in the pre-trained model.
-with open(f'model/tfidf_vectorizer.pkl', 'rb') as f:
-    tfidf_vectorizer = pickle.load(f)
+with open(f'model/tfidf_vectorizer.pkl', 'rb') as file:
+    tfidf_vectorizer = pickle.load(file)
     
-with open(f'model/classifier.pkl', 'rb') as f:
-    classifier = pickle.load(f)
+with open(f'model/classifier.pkl', 'rb') as file:
+    classifier = pickle.load(file)
 
 def predict_category(text):
     result = classifier.predict(tfidf_vectorizer.transform([text]))
