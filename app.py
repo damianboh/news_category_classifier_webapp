@@ -27,8 +27,7 @@ def main():
         prediction = predict_category(news_text)
         return flask.render_template('main.html',
                                      original_input={'News Text':news_text},
-                                     result=prediction,
-                                     )
+                                     result=prediction)
         
 if __name__ == '__main__':
     app.run()
